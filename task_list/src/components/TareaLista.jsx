@@ -3,13 +3,11 @@ import Tareas from './Tareas';
 
 const TareaLista = ({ cards }) => {
   return (
-    <div className="card-list">
+    <div className="">
       {cards.map((card, index) => (
         <Tareas
           key={index}
-          title={card.title}
           description={card.description}
-          image={card.image}
         />
       ))}
     </div>

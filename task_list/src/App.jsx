@@ -5,14 +5,10 @@ import './App.css'; // Importa el archivo de estilos CSS personalizados
 const App = () => {
   const initialCards = [
     {
-      title: 'Card 1',
       description: 'Description for Card 1',
-      image: 'https://example.com/card1.jpg',
     },
     {
-      title: 'Card 2',
       description: 'Description for Card 2',
-      image: 'https://example.com/card2.jpg',
     },
   ];
 
@@ -21,9 +17,7 @@ const App = () => {
 
   const addCard = () => {
     const newCard = {
-      title: `Card ${cardCount + 1}`,
       description: `Description for Card ${cardCount + 1}`,
-      image: `https://example.com/card${cardCount + 1}.jpg`,
     };
 
     setCards([...cards, newCard]);
@@ -31,12 +25,12 @@ const App = () => {
   };
 
   return (
-    <div className="app">
-      <h1 className="title">Card Gallery</h1>
-      <div className="centered-container">
+    <div >
+      <h1 className="">Card Gallery</h1>
+      <div className="">
         <TareaLista cards={cards} />
       </div>
-      <button className="add-card-button" onClick={addCard}>
+      <button className="" onClick={addCard}>
         Add Card
       </button>
     </div>
