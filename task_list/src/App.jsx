@@ -24,11 +24,12 @@ const App = () => {
     setCardCount(cardCount + 1);
   };
 
+
   return (
     <div >
       <h1 className="">Card Gallery</h1>
       <div className="">
-        <TareaLista cards={cards} />
+        <TareaLista cards={cards} setCards={setCards}/>
       </div>
       <button className="" onClick={addCard}>
         Add Card
