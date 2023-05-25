@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TareaLista from './components/TareaLista';
+import './App.css'; // Importa el archivo de estilos CSS personalizados
 
 const App = () => {
-  const cards = [
+  const initialCards = [
     {
       title: 'Card 1',
       description: 'Description for Card 1',
@@ -13,13 +14,31 @@ const App = () => {
       description: 'Description for Card 2',
       image: 'https://example.com/card2.jpg',
     },
-    // Agrega más objetos de tarjeta aquí según tus necesidades
   ];
+
+  const [cards, setCards] = useState(initialCards);
+  const [cardCount, setCardCount] = useState(2); // Contador inicial de tarjetas adicionales
+
+  const addCard = () => {
+    const newCard = {
+      title: `Card ${cardCount + 1}`,
+      description: `Description for Card ${cardCount + 1}`,
+      image: `https://example.com/card${cardCount + 1}.jpg`,
+    };
+
+    setCards([...cards, newCard]);
+    setCardCount(cardCount + 1);
+  };
 
   return (
     <div className="app">
-      <h1>Card Gallery</h1>
-      <TareaLista cards={cards} />
+      <h1 className="title">Card Gallery</h1>
+      <div className="centered-container">
+        <TareaLista cards={cards} />
+      </div>
+      <button className="add-card-button" onClick={addCard}>
+        Add Card
+      </button>
     </div>
   );
 };
